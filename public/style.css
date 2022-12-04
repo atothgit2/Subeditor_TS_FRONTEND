@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b59a86;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-element {
+  background:  #C44D58;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  padding: 3px 10px 3px 10px;
+  /* font: normal 10px; */
+  font-size: 12px;
+  text-align: center;
+  margin: 10px 10px 10px 0px
+}
+
+.tg {
+  width: 100%;
+  border-collapse: collapse;
+  border-color: #C44D58;
+  border-spacing: 0;
+}
+
+.tg td {
+  background-color: #F9CDAD;
+  border-color: #C44D58;
+  border-style: solid;
+  border-width: 1px;
+  color: #002b36;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+
+.tg th {
+  background-color: #FE4365;
+  border-color: #C44D58;
+  border-style: solid;
+  border-width: 1px;
+  color: #fdf6e3;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  /* font-weight: normal; */
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+
+.tg .tg-73oq {
+  border-color: #000000;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.text-box {
+  width: 100%;
+}
+textarea, select {
+  width: 100%;
+  height: 150px;
+  padding: 10px 10px;
+  /* margin: 8px 0; */
+  /* display: inline-block; */
+  border: 1px solid #FE4365;
+  border-radius: 5px;
+  /* box-sizing: border-box; */
+}
