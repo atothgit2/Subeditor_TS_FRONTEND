@@ -1,5 +1,6 @@
 const baseUrl = "http://localhost:6060";
 
+// API INTERACTIONS
 const fetchFileList = (url) => {
   let promise = axios
     .get(url + "/file", { responseType: "text" })
@@ -10,6 +11,7 @@ const fetchFileList = (url) => {
   return promise;
 };
 
+// TODO: Ezt a main function hívja meg! Kiszervezni!
 const fetchFileContent = (url, id) => {
   let promise = axios
     .get(url + "/file/" + id, { responseType: "text" })
@@ -20,12 +22,29 @@ const fetchFileContent = (url, id) => {
   return promise;
 };
 
+const uploadFile = async (url, formData) => {
+  axios.post(url + "/upload", formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  })
+};
+
+// INDEX PAGE INTERACTIONS
+const createUploadButton = (parentId) => {
+  const uploadField = document.getElementById(parentId);
+  const inputButton = document.createElement("input");
+  inputButton.type = "submit";
+  inputButton.value = "Upload!";
+  inputButton.id = "file-submit";
+  inputButton.for = "file";
+  inputButton.class = "submit-button";
+  uploadField.after(document.createElement("br"), inputButton);
+};
+
 const createTextBox = (text) => {
   let form = document.getElementById("upload-form");
-  let children = form.getElementsByTagName("*");
-  console.log(children.length);
-
-  if (children.length > 4) {
+  if (document.getElementById("content-box")) {
     let element = document.getElementById("content-box");
     element.remove();
   }
@@ -64,7 +83,7 @@ const createNewTableRow = (tableId, filename) => {
   }
 };
 
-//MAIN #1
+//MAIN
 const createFileListTable = async () => {
   // be kell burkolni az await-et egy asyncbe, mert csak azon belül működik
   let promise = fetchFileList(baseUrl); // ez kb egy task v todo, "ezt kell csinálni"
@@ -74,9 +93,26 @@ const createFileListTable = async () => {
   for (let i = 0; i < fileListArray.length; i++) {
     createNewTableRow("files-table", fileListArray[i]);
   }
+
+  const uploadField = document.getElementById("file-upload-field");
+  uploadField.addEventListener("change", () => {
+    if (document.getElementById("file-submit")) {
+      document.getElementById("file-submit").remove();
+    }
+    
+    let form = new FormData
+    form.append('file', uploadField.files[0], 'filename');
+    form.append('title', 'this is title');
+    form.append('imdbscore', 5.5);
+    // for (const pair of form.entries()) {console.log(`${pair[0]}, ${pair[1]}`);}
+
+    createUploadButton("file-upload-field");
+    let uploadButton = document.getElementById("file-submit");
+
+    uploadButton.onclick = () => {
+      uploadFile(baseUrl, form)
+    }
+  });
 };
 
 createFileListTable();
-// createTextBox(
-//   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac magna ligula. Fusce vel fringilla augue, in sagittis elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In non sem in mauris molestie accumsan. In consectetur dapibus libero non euismod. Suspendisse aliquam nisl suscipit, iaculis ipsum ut, hendrerit risus. Morbi mattis quam arcu, a aliquam diam consectetur eu. Quisque pharetra odio sed elit faucibus, rhoncus sagittis erat tristique. Proin sit amet tortor nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce imperdiet nisi id nibh scelerisque mollis. In ut felis vel ante efficitur euismod. Nunc posuere velit nec ligula malesuada tempor. Quisque sit amet lacus est. Nulla eget nunc ut nibh malesuada eleifend vel quis tellus."
-// );

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,12 @@
   <link rel="stylesheet" href="../public/style.css" />
   <title>subEDITR</title>
 </head>
+
 <body>
   <ul id="list"></ul>
   <form id="upload-form">
-    <label class="form-element" for="file-upload">Choose file to upload</label><br>
-    <input class="form-element" type="file" id="file-upload" accept=".srt" name="file" multiple /><br>
+    <label class="form-element" for="file">Choose file to upload</label><br>
+    <input class="form-element" type="file" id="file-upload-field" accept=".srt" name="file" /><br>
   </form><br>
   <table class="tg" id="files-table">
     <div id="table-div">
@@ -26,12 +28,13 @@
       </thead>
       <tbody id="files-table-tbody">
       </tbody>
-      </table>
-    </div>
-    <div id = "textbox-div">
-    </div>
+  </table>
+  </div>
+  <div id="textbox-div">
+  </div>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="../src/index.js" type="module"></script>
-  </body>
+</body>
+
 </html>
