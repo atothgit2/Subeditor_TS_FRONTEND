@@ -3,35 +3,35 @@
 }
 
 body {
-  background-color: #b59a86;
+  background-color: #5c5c5c;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-element {
-  background:  #C44D58;
+  /* background:  #C44D58; */
   border-radius: 5px;
   border: none;
-  color: #ffffff;
+  color: #d2d2d2;
   padding: 3px 10px 3px 10px;
   /* font: normal 10px; */
   font-size: 12px;
-  text-align: center;
+  text-align: left;
   margin: 10px 10px 10px 0px
 }
 
 .tg {
   width: 100%;
   border-collapse: collapse;
-  border-color: #C44D58;
+  border-color: #000000;
   border-spacing: 0;
 }
 
 .tg td {
-  background-color: #F9CDAD;
-  border-color: #C44D58;
+  background-color: #b9b9b9;
+  border-color: #737373;
   border-style: solid;
   border-width: 1px;
-  color: #002b36;
+  color: #323232;
   font-family: Arial, sans-serif;
   font-size: 12px;
   overflow: hidden;
@@ -40,8 +40,8 @@ body {
 }
 
 .tg th {
-  background-color: #FE4365;
-  border-color: #C44D58;
+  background-color: #767676;
+  border-color: #414141;
   border-style: solid;
   border-width: 1px;
   color: #fdf6e3;
@@ -69,14 +69,14 @@ textarea, select {
   padding: 10px 10px;
   /* margin: 8px 0; */
   /* display: inline-block; */
-  border: 1px solid #FE4365;
+  border: 1px solid #4c4c4c;
   border-radius: 5px;
   /* box-sizing: border-box; */
 }
 
 input {
-  padding: 5px;
+  padding: px;
   margin: 5px;
-  border: 1px solid #FE4365;
+  border: 1px solid #2a2a2a;
   border-radius: 4px;
 }

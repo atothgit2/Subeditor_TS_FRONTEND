@@ -9,9 +9,9 @@ const fetchFileList = async (url) => {
 };
 
 // TODO: Ezt a createNewTableRow() function hívja meg most! Main() hívja meg!
-const fetchFileContent = async (url, id) => {
+const fetchFileContent = async (url, id, extension) => {
   let promise = axios
-    .get(url + "/file/" + id, { responseType: "text" })
+    .get(url + "/file/" + id + "." + extension, { responseType: "text" })
     .then((response) => {
       return response.data;
     })

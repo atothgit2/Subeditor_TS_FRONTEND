@@ -12,21 +12,23 @@
 <body>
   <ul id="list"></ul>
   <form id="upload-form">
-    <label class="form-element" for="file">Filename</label>
-    <input class="form-element" type="text" id="filename-upload-field"/><br>
-    <label class="form-element" for="file">File</label>
-    <input class="form-element" type="file" id="file-upload-field" accept=".srt" name="file" /><br>
-    
+    <label class="form-element label" for="filename-upload-field">Filename</label><br>
+    <input class="form-element textbox" type="text" id="filename-upload-field"/><br>
+    <label class="form-element label" for="title-upload-field">Title</label><br>
+    <input class="form-element textbox" type="text" id="title-upload-field"/><br>
+    <label class="form-element label" for="imdb-upload-field">Imdb</label><br>
+    <input class="form-element textbox" type="text" id="imdb-upload-field"/><br>
+    <input class="form-element upload" type="file" id="file-upload-field" accept=".srt" name="file" /><br>
   </form><br>
   <table class="tg" id="files-table">
     <div id="table-div">
       <thead>
         <tr>
-          <th class="tg-cell">Filename</th>
-          <th class="tg-cell">ID</th>
-          <th class="tg-cell">Title</th>
-          <th class="tg-cell">IMDB</th>
-          <th class="tg-cell">Actions</th>
+          <th class="tg-cell table-header" id="filename">Filename</th>
+          <th class="tg-cell table-header" id="id">ID</th>
+          <th class="tg-cell table-header" id="title">Title</th>
+          <th class="tg-cell table-header" id="imdb">IMDB</th>
+          <th class="tg-cell table-header" id="actions">Actions</th>
         </tr>
       </thead>
       <tbody id="files-table-tbody">
